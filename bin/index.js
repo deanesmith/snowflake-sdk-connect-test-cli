@@ -4,14 +4,18 @@ const snowflake = require('snowflake-sdk');
 const optionConfig = {
       "account": { describe: "Snowflake account", type: "string", demandOption: true },
       "username": { describe: "Snowflake user", type: "string", demandOption: true },
-      "password": { describe: "Snowflake password", type: "string", demandOption: true },
+      "authenticator": { describe: "SNOWFLAKE, EXTERNALBROWSER, https://<okta_account_name>.okta.com, OAUTH, SNOWFLAKE_JWT", type: "string", demandOption: false },
+      "password": { describe: "Snowflake password", type: "string", demandOption: false },
+      "token": { describe: "Oauth token", type: "string", demandOption: false },
+      "privateKey" : { describe: "Private key (in PEM format) for key pair authentication", type: "string", demandOption: false },
+      "privateKeyPath": { describe: "Local path to the private key file", type: "string", demandOption: false },
+      "privateKeyPass": { describe: "The passcode to decrypt the private key file", type: "string", demandOption: false },
       "proxyHost": { describe: "Snowflake proxy host", type: "string", demandOption: false },
       "proxyPort": { describe: "Snowflake proxy port", type: "number", demandOption: false },
       "proxyUser": { describe: "Snowflake proxy user", type: "string", demandOption: false },
       "proxyPassword": { describe: "Snowflake proxy password", type: "string", demandOption: false },
       "proxyProtocol": { describe: "Snowflake proxy protocol (http or https)", type: "string", demandOption: false },
       "authenticator": { describe: "Snowflake authentication type", type: "string", demandOption: false },
-      "token": { describe: "Snowflake oauth token", type: "string", demandOption: false },
       "accessUrl": { describe: "Snowflake accessUrl", type: "string", demandOption: false },
 };
 
@@ -24,20 +28,11 @@ const yargsConfig = yargs
 let snowflakeConfig = {};
 
 for (option in optionConfig) {
-
       let optionValue = yargs.argv[option];
-
       if (optionValue !== undefined) {
-
             if (optionConfig[option].type === 'string') {
-                  
                   optionValue = optionValue.trim();
-
-                  if (option.indexOf("password") >= 0) {
-                        optionValue = optionValue.replace("'", "");
-                  }
             }
-
             snowflakeConfig[option] = optionValue;
       }
 }
