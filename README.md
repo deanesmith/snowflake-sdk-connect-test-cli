@@ -8,13 +8,16 @@ npm install . -g
 Name each parameter exactly the same as the option name as specified in the [Snowflake Node.js driver options reference](https://docs.snowflake.com/en/developer-guide/node-js/nodejs-driver).
 
 Usage:
+
 `
 conn --account --username
 `
 
 Use single quotes around strings with special characters.
 
+
 The list of parameters is specified below.
+
 
 account - Snowflake account
 
