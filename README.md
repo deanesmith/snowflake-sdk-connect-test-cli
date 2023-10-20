@@ -18,7 +18,7 @@ Use single quotes around strings with special characters.
 
 The list of parameters is specified below.
 
-`
+```
 account - Snowflake account
 username - Snowflake user
 authenticator - SNOWFLAKE, EXTERNALBROWSER, https://<okta_account_name>.okta.com, OAUTH, SNOWFLAKE_JWT (optional)
@@ -34,7 +34,7 @@ proxyPassword - Snowflake proxy password (optional)
 proxyProtocol - Snowflake proxy protocol (http or https) (optional)
 authenticator - Snowflake authentication type (optional)
 accessUrl - Snowflake accessUrl (optional)
-`
+```
 
 You're on your own to establish permutations of parameters to make a successful connection.
       
