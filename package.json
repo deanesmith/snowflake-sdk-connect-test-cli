@@ -1,0 +1,12 @@
+{
+  "name": "snowflake-sdk-connect-test-cli",
+  "version": "0.0.1",
+  "description": "Simple way to test Snowflake connections via the NodeJS Snowflake SDK",
+  "bin": {
+    "conn": "./bin/index.js"
+  },
+  "dependencies": {
+    "snowflake-sdk": "^1.9.0",
+    "yargs": "^17.7.2"
+  }
+}
