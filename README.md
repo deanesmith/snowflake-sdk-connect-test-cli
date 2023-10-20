@@ -18,7 +18,7 @@ Use single quotes around strings with special characters.
 
 The list of parameters is specified below.
 
-
+`
 account - Snowflake account
 
 username - Snowflake user
@@ -48,7 +48,7 @@ proxyProtocol - Snowflake proxy protocol (http or https) (optional)
 authenticator - Snowflake authentication type (optional)
 
 accessUrl - Snowflake accessUrl (optional)
-
+`
 
 You're on your own to establish the proper permutations of parameters to establish a connection.
       
